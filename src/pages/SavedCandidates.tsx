@@ -19,7 +19,7 @@ const SavedCandidates = () => {
           <table key={candidate.id}>
             <tbody >
               <tr >
-                <td><img className="potential-avatar" src={candidate.avatar_url} alt={candidate.name}/></td>
+                <td><img className="potential-avatar" src={candidate.avatar_url} alt={candidate.name} /></td>
                 <td><strong>{candidate.name || 'No Name Provided'}</strong></td>
                 <td><strong>Username:</strong> {candidate.login}</td>
                 <td><p><strong>Location:</strong> {candidate.location || 'N/A'}</p></td>
