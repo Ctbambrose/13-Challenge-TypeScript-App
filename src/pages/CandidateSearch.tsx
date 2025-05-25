@@ -3,8 +3,8 @@ import { searchGithub, searchGithubUser } from '../api/API';
 import Candidate from "../interfaces/Candidate.interface.js";
 
 const CandidateSearch = () => {
-  const [currentCandidate, setCurrentCandidate] = useState <Candidate |null>(null);
-    const [isLoading, setIsLoading] = useState(true);
+  const [currentCandidate, setCurrentCandidate] = useState<Candidate | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [noMoreCandidates, setNoMoreCandidates] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,6 @@ const CandidateSearch = () => {
         return;
       }
 
-      // Pick the first candidate and get detailed info
       const fullProfile = await searchGithubUser(candidates[0].login);
       setCurrentCandidate(fullProfile);
     } catch (error) {
@@ -58,7 +57,7 @@ const CandidateSearch = () => {
       <h1>Candidate Search</h1>
       {currentCandidate && (
         <section>
-          <img className='avatar' src={currentCandidate.avatar_url} alt={currentCandidate.name}/>
+          <img className='avatar' src={currentCandidate.avatar_url} alt={currentCandidate.name} />
           <h2>{currentCandidate.name || "Name not Provided"}</h2>
           <p>
             <strong>Username:</strong> {currentCandidate.login}
@@ -74,17 +73,13 @@ const CandidateSearch = () => {
           </p>
           <p>
             <strong>Profile:</strong>{" "}
-            <a
-              href={currentCandidate.html_url}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={currentCandidate.html_url} target="_blank" rel="noreferrer">
               GitHub Profile
             </a>
           </p>
           <div className='add-button'>
-          <button onClick={handleSaveCandidate}>&#65291;</button>
-          <button onClick={handleSkipCandidate}>&#x002D;</button>
+            <button onClick={handleSaveCandidate}>&#65291;</button>
+            <button onClick={handleSkipCandidate}>&#x002D;</button>
           </div>
         </section>
       )}
