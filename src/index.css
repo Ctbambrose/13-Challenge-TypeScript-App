@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*Start of Search Candidates*/
 a {
   font-weight: 500;
   color: #646cff;
@@ -38,6 +39,11 @@ body {
   min-height: 100vh;
 }
 
+article {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -46,13 +52,14 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 30px;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  width: 75px;
+  height: 75px;
 }
 button:hover {
   border-color: #646cff;
@@ -60,6 +67,18 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.add-button{
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 75%;
+  display: flex;
+  justify-self: center;
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -74,7 +93,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/*End of Search Candidates*/
 
+/*Start of Saved Candidates*/
 main {
   color: #fff;
   width: 100%;
@@ -88,22 +109,40 @@ tr {
   border-radius: 10px;
   background-color: #000;
   color: white;
+  border: 1px solid #fff;
 }
 
 tbody tr:nth-child(odd) {
   background-color: #333333;
 }
 
-.nav {
-  display: flex;
-  justify-content: flex-start;
-  padding: 1em 2em;
+td {
+  width: 12%;
+  border: 1px solid #fff;
 }
 
-.nav-item {
-  padding: 0 0.5rem;
-  list-style: none;
+.potential-avatar {
+  width: 100%;
 }
+/*End of Saved Candidates*/
+
+/*Start of Navigation section*/
+/* .nav {
+
+} */
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0; */
+  /* margin: 0; */
+  list-style: none;
+  padding-inline-end: 40px;
+}
+
+/* .nav-item {
+  
+} */
 
 .nav-link {
   color: #fff;
@@ -118,3 +157,4 @@ tbody tr:nth-child(odd) {
   width: 80vw;
   table-layout: fixed;
 }
+/*End of Navigation section*/
